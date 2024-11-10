@@ -1,0 +1,18 @@
+{
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS":[
+                    "arn:aws:iam::{dev account id}:role/Terraform-Admin-Role",
+                    "arn:aws:iam::{noprod account id}:role/Terraform-Admin-Role",
+                    "arn:aws:iam::{prod account id}:role/Terraform-Admin-Role"
+                ]
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::{project}-tf-west/*",
+                "arn:aws:s3:::{project}-tf-west"]
+        }
+    ]
+}
